@@ -11,6 +11,11 @@
             <i class="glyphicon glyphicon-chevron-right"></i>
             <i class="glyphicon glyphicon-chevron-down"></i>
             <b><%= feature.keyword %>:</b><%= feature.name %>
+            <% if (feature.time) { %>
+              <span class="feature-element-duration">
+                <%= calculateDuration(feature.time) %>
+              </span>
+            <% } %>
             <span class="label-container">
               <% if (feature.scenarios.passed) { %><span class="label label-success" title="Passed"><%= feature.scenarios.passed %></span><% } %>
               <% if (feature.scenarios.failed) { %><span class="label label-danger" title="Failed"><%= feature.scenarios.failed %></span><% } %>
@@ -35,6 +40,11 @@
                     <i class="glyphicon glyphicon-chevron-right"></i>
                     <i class="glyphicon glyphicon-chevron-down"></i>
                     <b><%= element.keyword %>:</b><%= element.name %>
+                    <% if (element.time) { %>
+                      <span class="feature-element-duration">
+                        <%= calculateDuration(element.time) %>
+                      </span>
+                    <% } %>
                     <span class="label-container">
                       <% if (element.passed) { %><span class="label label-success" title="Passed"><%= element.passed %></span><% } %>
                       <% if (element.notdefined) { %><span class="label label-info" title="Undefined"><%= element.notdefined %></span><% } %>
